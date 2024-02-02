@@ -1,0 +1,94 @@
+------------ Começando os estudos de Banco de dados -------------
+
+>>>>>Estrutura do banco de dados<<<<<<<
+
+
+Id primario, apenas um pode ter
+
+id = int = número
+name = varchar = guarda texto e com o ? na frente significa que é opcional
+
+>>>>>>>CRIANDO A TABELA <<<<<<<<
+A palavra reservada AUTOINCREMENT significa que o banco de dados vai criar de uma maneira automatica uma sequencia de cadastros
+
+
+>>>>>COMANDOS DO SQL<<<<<<<
+ALTER TABLE users // para alterar alguma coisa na TABELA
+RENAME TO ... // Renomear o nome da TABELA
+ADD (nome) (tipo)// add uma coluna sem os ()
+RENAME COLUMN ... TO ... //Renomar a coluna
+DROP COLUMN ... //deletar a coluna
+
+Comandos DML - codigos para manipular dados
+
+C - create >> INSERT
+R - read >> SELECT
+U - update >> UPDATE
+D - delete - DELETE
+
+>>>>>>>Modelo de colocar e deletar dados<<<<<<<
+
+INSERT INTO users
+(name, email, password)
+VALUES
+('Julia', 'julia@email.com', '123'); //vai colocar os dados
+
+
+SELECT * FROM users; //para executar
+
+UPDATE users SET
+avatar  ='julia.png',
+name = 'Julia Gabrielle'
+WHERE id = 15 //sempre colocar o WHERE para não apagar tudos
+
+DELETE FROM users
+WHERE id = 16
+
+
+
+>>>>>>> MIgrations <<<<<<<
+è uma forma de versionar a base de dados
+Migrations trabalha na manipulação da base de dados: criando, alterando ou removendo.
+
+Metodos 
+UP: metodo responsavel por criar ou alterar algo no banco de dados
+DOWN: responsavel poleo rollback. Ou seja, desfazer as alterações realizadas pela migration
+
+Comando para criar o banco npx knex migrate:latest
+
+<>>>>>> NPN<<<<<<
+Node Package Manager - é o gerenciador de pacortes padão parq o Node
+Os pacortes e módulos necessários no projeto Node são instalados usando o npm
+
+e também usamos o npm para executar scripts e bibliotecas instaladas 
+
+>>>>>>NPX<<<<<<<<
+O npx significa Node Package Execute e vem com o npm acima da versão 5.2
+é um executor de pacotes npm que pode executar qualquer pacote que você quiser 
+do registro npm sem sequer instalar esse pacote
+
+
+npm = inslada pacortes
+npx = executa pacortes
+
+
+>>>>>> Chave Primaria <<<<<<<<
+é o indentificador unico dentro da tabela, objetivo é indentificadar os registros para que cada registro tenha seu proprio indentificadar.
+O pilar da chave primaria é garantir que esse valor não se repita.
+Todas as tabelas tem a chave primaria. 
+Ex: id
+
+--- Chave Estrangeira---
+Chave gerada de outra tabela.
+objetivo de conectar tabelas, vincular dados de outras tabelas.
+
+Primary key e Foreign key
+
+>>>>> Cardinalidade <<<<<<
+Frequencia que uma tabela se relaciona com a outra
+o risco que parece um pé de galinha = muitos
+
+
+um usuario pode ter muitas notas e que as notas podem ter muitas tags
+
+

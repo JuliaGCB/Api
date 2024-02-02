@@ -1,0 +1,74 @@
+npm init -y: criando o packet.json
+express - framwwork web rapido e flexivel. 
+ npm install express --save : criando o express
+ npm install : volta com a pasta node_madules
+
+
+
+Notas No script no packege.json podemos criar comando de rapido acesso, como por exemplo acessar uma pasta rapidos
+
+Metodos de requisições
+GET / leitura
+POST / Criação
+PUT  / Atualização
+DELETE / Deleção
+PATCH / Atualização parcial
+
+request = requisição que foi feita
+response = o recurso que pode utilizar para conseguir a resposta
+
+Route Params: Dados simples - São Obrigatorios os paramentros
+Posso colocar quantos paramentros quiser, mas tem que ser separados pelo /:
+/message/:id : exemplo de parametro http://localhost:3333/message/5
+Id da mensagem: ${request.params.id} : recuperando o valor do paramentro pelo request
+
+Query Params: São Opcionais os parametros para achar a rota
+? usar para falar que é Query params
+exemplo: http://localhost:3333/user?page=2&limit=10
+
+Nodemon
+npm install nodemon --save-dev
+
+Usando o insominia para ver a api e aprendendo sobro o POST
+
+Codigo para puxar os dados da minha requisição
+app.post("/users", (request, response) => {
+    const { name, email, password } = request.body;
+
+    response.send(`Usuário: ${name} - E-mail: ${email} - Senha: ${password}`); 
+});
+================================================================
+
+Status http
+100- Informativo
+200- Sucesso
+300- Movido
+400- Erro do Cliente
+500- Erro servidor
+
+================================================================
+
+Middleware
+
+È o segurança das requisições
+são funções que tem acesso ao objeto de solicitação requisição, o objetoo de resposta, e a próxima função de Middleware no ciclo solicitação-resposta do aplicativo.
+
+A próxima função Middleware é comumente denotada por uma variável chamada next.
+
+     PODEM
+- executar qualquer código.
+- Fazer mudanças nos objetos de solicitações e resposta.
+- Encerrar o ciclo de solicitação-resposta.
+- Chamar o próximo Middleware na pilha.
+
+
+----- Fazendo com que o Middleware barre um usuario que não seja Admin-----
+function myMiddleware(request, response, next) {
+    console.log("Você passou pelo Middleware!");
+   
+    if(!request.body.isAdmin) {
+        return response.json({message:"user unauthorized"})
+   }
+    next(); //vai chamar a proxima função
+
+} 
