@@ -92,3 +92,40 @@ o risco que parece um pé de galinha = muitos
 um usuario pode ter muitas notas e que as notas podem ter muitas tags
 
 
+>>>>> Inner Join <<<<
+ Pega os registros em comum entre duas tabelas 
+
+
+>>>>>>> MAP<<<<<<<
+Funçaõ do JS que é usado para precorrer cada elemento de um Array
+
+const tags = [
+  {id: 1, name: "node", node_id: 1},
+  {id: 2, name: "express", node_id: 1},
+  {id: 3, name: "react", node_id: 1},
+  {id: 4, name: "javascript", node_id: 2},
+  {id: 5, name: "frontend", node_id: 2},
+];
+
+const newArray = tags.map(tag => {
+  return {
+    name: tag.name
+  }
+});
+
+Estou pecorrendo cada item e nesse codigo eu quero apenas o nome do elemento
+
+const newArray = tags.map(tag => {
+  return{
+    ...tag,
+    date: new Date()
+  }
+});
+
+Colocando coisas novas dentro do Array; // ... signica que estou despejando as outras informações
+
+
+>>>>>>> Filter <<<<<<<<
+
+Função do js para Array,
+filtrar
