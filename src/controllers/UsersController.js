@@ -30,10 +30,10 @@ class UsersController {
     };
     async update(request, response) { // para atualizar os dados
         const { name, email, password, old_password} = request.body; //desistruturando do body
-        const { id } = request.params; 
+        const user_id = request.user.id; //aqui foi mudado pois o id agora é passado dentro da requicição ( pasta middleware)
 
         const database = await sqliteConnection();
-        const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
+        const user = await database.get("SELECT * FROM users WHERE id = (?)", [user_id]);
 
         if(!user){
             throw new App ("Usuário não encontrado");
@@ -69,7 +69,7 @@ class UsersController {
             password = ?,
             updated_at = DATETIME('now')  
             WHERE id = ?`,
-            [user.name, user.email, user.password, id] // atualizando o usuário // DATATIME é uam funão do proprio banco para atualizar a data
+            [user.name, user.email, user.password, user_id] // atualizando o usuário // DATATIME é uam funão do proprio banco para atualizar a data
         );
 
         return response.json(); //mensagem para retornar se foi certo

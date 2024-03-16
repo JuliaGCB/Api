@@ -129,3 +129,14 @@ Colocando coisas novas dentro do Array; // ... signica que estou despejando as o
 
 Função do js para Array,
 filtrar
+
+
+
+>>>>>>> JWT (Json web token) <<<<<<<
+é um padrão de mercado que define um token no formato JSON para a troca de informações
+NÂO È UM MECANISMO DE AUTENTICAÇÂO, mas um meio para a troca de informações no fluxo de autenticação
+
+Estrutura do JWT
+header  : Altorito  tipo do token
+payload : Conteúdo do token (apenas as informações necessárias)
+verify signature: garante a integridade do token

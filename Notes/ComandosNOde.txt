@@ -2,6 +2,7 @@ npm init -y: criando o packet.json
 express - framwwork web rapido e flexivel. 
  npm install express --save : criando o express
  npm install : volta com a pasta node_madules
+npm install jsonwebtoken : biblioteca para gerar o token
 
 
 
