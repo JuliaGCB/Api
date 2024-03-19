@@ -3,7 +3,7 @@ express - framwwork web rapido e flexivel.
  npm install express --save : criando o express
  npm install : volta com a pasta node_madules
 npm install jsonwebtoken : biblioteca para gerar o token
-
+npm install multer : fazendo a instalação do multer  é uma biblioteca que vai fazer o upload das imagens
 
 
 Notas No script no packege.json podemos criar comando de rapido acesso, como por exemplo acessar uma pasta rapidos
@@ -73,3 +73,13 @@ function myMiddleware(request, response, next) {
     next(); //vai chamar a proxima função
 
 } 
+
+
+>>>>>>> M<ódulo fs do node.js <<<<<<<
+o módulo fs permite trabalhar e manipular arquivos
+
+rename do fs serve para renomear ou mover arquivos - dois parametros é onde esta o arquivo e onde ele vai ficar
+path.resolver: resolver uma sequencia de segmentos de caminho para um caminho absoluto - vai resolver o caminho de acordo com o sistema operacional e encontar do jeito certo o arquivo
+
+stat: retornar o status do arquivo
+unlink: remover um arquivo
