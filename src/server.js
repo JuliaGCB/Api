@@ -3,12 +3,14 @@ const migrationsRun = require("./database/sqlite/migrations");
 const AppError = require("./utils/AppError");
 const uploadConfig = require("./configs/upload")
 
+const cors = require ("cors");
 const express = require('express'); //importou o express
 const routes =  require("./routes")
 
 migrationsRun(); //desse jeito ja consigo usar a função dentro da pasta database
 
 const app = express(); //inicializando o express
+app.use(cors()) //habilitando o back-end para que ele possa atender o front
 app.use(express.json()); //falando para o node que o arquivo é JSON
 
 app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER)); //Buscando a foto do usuario para ser exibida no insominia

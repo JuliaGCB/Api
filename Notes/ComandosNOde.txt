@@ -2,9 +2,11 @@ npm init -y: criando o packet.json
 express - framwwork web rapido e flexivel. 
  npm install express --save : criando o express
  npm install : volta com a pasta node_madules
+ npm rum migrate : volta com o banco de dados
 npm install jsonwebtoken : biblioteca para gerar o token
 npm install multer : fazendo a instalação do multer  é uma biblioteca que vai fazer o upload das imagens
-
+npm install cors : uma biblioteca que vai conectar o front com o back
+npm install axios : uma biblioteca para trabalhar com requisições http
 
 Notas No script no packege.json podemos criar comando de rapido acesso, como por exemplo acessar uma pasta rapidos
 
