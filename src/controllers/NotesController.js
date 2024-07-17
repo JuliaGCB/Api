@@ -62,7 +62,7 @@ class NotesController{
     async index(request, response){  // Listando as notas do usuário
         const {title, tags} = request.query;
 
-        const user_id = request.user.user_id;
+        const user_id = request.user.id;
 
         let notes;
 
